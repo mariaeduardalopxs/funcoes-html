@@ -1,0 +1,513 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   FUNDO DA PÁGINA
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Poppins", sans-serif;
+
+    /* Transição de várias cores */
+    background: linear-gradient(
+        -45deg,
+        #ffb6d5,
+        #f8a5c2,
+        #f78fb3,
+        #c77dff,
+        #ffb6d5
+    );
+
+    background-size: 400% 400%;
+
+    animation: fundoColorido 12s ease infinite;
+
+    overflow: hidden;
+}
+
+
+/* Animação do fundo */
+
+@keyframes fundoColorido {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/* =========================
+   CARTÃO PRINCIPAL
+========================= */
+
+.cartao {
+
+    width: 90%;
+    max-width: 550px;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    /* Efeito de vidro */
+
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(15px);
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 50px rgba(145, 42, 91, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.5);
+
+    position: relative;
+
+    z-index: 5;
+
+    animation: aparecer 1s ease;
+}
+
+
+/* Animação de entrada */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================
+   ÍCONE
+========================= */
+
+.icone {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+
+    animation: flutuar 3s ease-in-out infinite;
+
+}
+
+
+/* Animação do ícone */
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 38px;
+
+    color: #d63384;
+
+    text-shadow:
+        2px 2px 0 #ffd6e7;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+.subtitulo {
+
+    color: #8f4164;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+
+}
+
+
+/* =========================
+   CAIXA DA MENSAGEM
+========================= */
+
+.caixa-mensagem {
+
+    min-height: 130px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #ffe1ed
+    );
+
+    border: 2px solid #f5a3c3;
+
+    border-radius: 25px;
+
+    box-shadow:
+        inset 0 0 20px rgba(214, 51, 132, 0.08),
+        0 8px 20px rgba(214, 51, 132, 0.12);
+
+    margin-bottom: 28px;
+
+}
+
+
+/* Mensagem */
+
+.mensagem {
+
+    color: #a61e5c;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    font-weight: 600;
+
+    transition: 0.5s;
+
+}
+
+
+/* Brilhos */
+
+.brilho {
+
+    color: #e83e8c;
+
+    font-size: 24px;
+
+    animation: brilho 1.5s infinite alternate;
+
+}
+
+
+@keyframes brilho {
+
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+
+    position: relative;
+
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ff5c9a,
+        #d63384,
+        #a61e5c
+    );
+
+    background-size: 200% 200%;
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(198, 31, 101, 0.4);
+
+    transition: all 0.4s ease;
+
+    animation: botaoCores 4s ease infinite;
+
+}
+
+
+/* Movimento das cores do botão */
+
+@keyframes botaoCores {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/* Quando passar o mouse */
+
+.botao:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 12px 30px rgba(198, 31, 101, 0.55);
+
+}
+
+
+/* Quando clicar */
+
+.botao:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+
+    margin-top: 25px;
+
+    color: #a64d73;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   CORAÇÕES DECORATIVOS
+========================= */
+
+.coracao {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    opacity: 0.7;
+
+    z-index: 1;
+
+    animation:
+        subir 5s ease-in-out infinite,
+        girar 4s linear infinite;
+
+}
+
+
+.coracao1 {
+    left: 8%;
+    top: 20%;
+}
+
+
+.coracao2 {
+    right: 10%;
+    top: 15%;
+
+    animation-delay: 1s;
+}
+
+
+.coracao3 {
+    left: 15%;
+    bottom: 15%;
+
+    animation-delay: 2s;
+}
+
+
+.coracao4 {
+    right: 15%;
+    bottom: 18%;
+
+    animation-delay: 3s;
+}
+
+
+/* Animação dos corações */
+
+@keyframes subir {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+@keyframes girar {
+
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 10deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+
+}
+
+
+/* =========================
+   ESTRELAS
+========================= */
+
+.estrela {
+
+    position: absolute;
+
+    color: white;
+
+    font-size: 30px;
+
+    animation: piscar 2s infinite alternate;
+
+}
+
+
+.estrela1 {
+    top: 12%;
+    left: 30%;
+}
+
+
+.estrela2 {
+    bottom: 15%;
+    right: 30%;
+
+    animation-delay: 0.7s;
+}
+
+
+.estrela3 {
+    top: 35%;
+    right: 5%;
+
+    animation-delay: 1.2s;
+}
+
+
+@keyframes piscar {
+
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 600px) {
+
+    .cartao {
+        padding: 35px 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .coracao {
+        font-size: 25px;
+    }
+
+}
